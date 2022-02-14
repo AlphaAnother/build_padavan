@@ -31,7 +31,7 @@ jobs:
           cd /opt/rt-n56u
           git apply personal_modify.diff
       - name: Run shellcheck
-        run: sh ./trunk/tools/shellcheck.sh
+        run: sh /opt/rt-n56u/trunk/tools/shellcheck.sh
       - name: Prepare toolchain
         run: |
           cd /opt/rt-n56u/toolchain-mipsel
