@@ -1,18 +1,21 @@
 diff --git a/trunk/build_firmware_modify b/trunk/build_firmware_modify
-index 5075e4b4e..af8571c15 100755
+index fc3b30287..53d2c186f 100755
 --- a/trunk/build_firmware_modify
 +++ b/trunk/build_firmware_modify
-@@ -23,7 +23,7 @@ sed -i 's/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y/CONFIG_FIRMWARE_INCLUDE_SHADOWSO
+@@ -23,24 +23,24 @@ sed -i 's/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y/CONFIG_FIRMWARE_INCLUDE_SHADOWSO
  ##此插件选项只在本地编译的时候才会生效
  ##科学上网##
  echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config #科学上网插件，选择n后全部有关插件都不集成
 -echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config #集成xray执行文件  ~4.5M
 +echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config #集成xray执行文件  ~4.5M
  echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件
- echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config #集成trojan执行文件  ~0.5M
+ echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config #集成trojan执行文件  ~1.2M
  echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config #simple-obfs混淆插件
-@@ -33,14 +33,14 @@ echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config #simple-obfs混淆插件
- echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config #adbyby plus+
+ ##科学上网##
+ 
+ ##广告管理##
+-echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config #adbyby plus+
++echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config #adbyby plus+
  
  ##DNS服务##
 -echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
@@ -21,10 +24,9 @@ index 5075e4b4e..af8571c15 100755
  
  
  ##内网穿透服务##
--echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
+ echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
 -echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #aliddns
 -echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=y" >> .config #ddnsto  ~0.5M
-+echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
 +echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #aliddns
 +echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=n" >> .config #ddnsto  ~0.5M
  ##内网穿透服务##
@@ -32,7 +34,7 @@ index 5075e4b4e..af8571c15 100755
  echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #mentohust
 diff --git a/trunk/configs/templates/modJCG-Y2.config b/trunk/configs/templates/modJCG-Y2.config
 new file mode 100644
-index 000000000..42ad82ffe
+index 000000000..9872b67c4
 --- /dev/null
 +++ b/trunk/configs/templates/modJCG-Y2.config
 @@ -0,0 +1,232 @@
@@ -83,13 +85,13 @@ index 000000000..42ad82ffe
 +CONFIG_FIRMWARE_ENABLE_SWAP=n
 +
 +### Include UVC camera modules. ~0.2MB
-+#CONFIG_FIRMWARE_INCLUDE_UVC=n
++#CONFIG_FIRMWARE_INCLUDE_UVC=y
 +
 +### Include USB-HID modules. ~0.2MB
-+#CONFIG_FIRMWARE_INCLUDE_HID=n
++#CONFIG_FIRMWARE_INCLUDE_HID=y
 +
 +### Include USB-Audio modules ~0.46MB
-+#CONFIG_FIRMWARE_INCLUDE_AUDIO=n
++#CONFIG_FIRMWARE_INCLUDE_AUDIO=y
 +
 +### Include XFRM (IPsec) modules & iptables extension ~ 0.2MB
 +CONFIG_FIRMWARE_INCLUDE_XFRM=n
@@ -270,7 +272,7 @@ index 000000000..42ad82ffe
 +CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y
 diff --git a/trunk/configs/templates/modMR2600.config b/trunk/configs/templates/modMR2600.config
 new file mode 100644
-index 000000000..46e198dbb
+index 000000000..416a73d47
 --- /dev/null
 +++ b/trunk/configs/templates/modMR2600.config
 @@ -0,0 +1,232 @@
@@ -321,13 +323,13 @@ index 000000000..46e198dbb
 +CONFIG_FIRMWARE_ENABLE_SWAP=n
 +
 +### Include UVC camera modules. ~0.2MB
-+#CONFIG_FIRMWARE_INCLUDE_UVC=n
++#CONFIG_FIRMWARE_INCLUDE_UVC=y
 +
 +### Include USB-HID modules. ~0.2MB
-+#CONFIG_FIRMWARE_INCLUDE_HID=n
++#CONFIG_FIRMWARE_INCLUDE_HID=y
 +
 +### Include USB-Audio modules ~0.46MB
-+#CONFIG_FIRMWARE_INCLUDE_AUDIO=n
++#CONFIG_FIRMWARE_INCLUDE_AUDIO=y
 +
 +### Include XFRM (IPsec) modules & iptables extension ~ 0.2MB
 +CONFIG_FIRMWARE_INCLUDE_XFRM=n
