@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - build_variant: "psersonal_modify"
+          - build_variant: "MT7621-1USB"
             targets: "modMR2600 modJCG-Y2"
     steps:
       - uses: actions/checkout@v2
